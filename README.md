@@ -1,6 +1,6 @@
 ## Example Frontend/Backend deployment
 
-Creates a DeploymentConfig, Service, and ImageStream for a backend application. 
+Creates a DeploymentConfig, Service, Route, and ImageStream for a backend application. 
 
 #### Update Helm Dependencies
 
