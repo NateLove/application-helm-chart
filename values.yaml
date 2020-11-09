@@ -1,36 +1,17 @@
 ---
 env: dev
 
-keycloak:
-  redirectUrl: 'https://{{ $.Values.global.appname }}-{{ $.Release.Namespace }}.{{ $.Values.global.cluster.baseDomain }}'
-  username: lskywalker
-  password: lskywalker
-
-oauth:
-  host: '{{ $.Values.global.appname }}-{{ $.Release.Namespace }}.{{ $.Values.global.cluster.baseDomain }}'
-  oidcIssuerUrl: 'https://keycloak-{{ $.Release.Namespace }}.{{ $.Values.global.cluster.baseDomain }}/auth/realms/{{ $.Release.Name }}'
-
-pipeline:
-  backend:
-    url:  'https://{{ $.Values.global.appname }}-{{ $.Release.Namespace }}.{{ $.Values.global.cluster.baseDomain }}/api/v1'
-
-postgres:
-  name: "tododb"
-  app: "example-app"
-  postgresqlUsername: "todo_user"
-  postgresqlPassword: "todo_password"
-  postgresqlDatabase: "todo_database"
-  service:
-    port: 5432
+#pipeline:
+#  backend:
+#    url:  'https://{{ $.Values.global.appname }}-{{ $.Release.Namespace }}.{{ $.Values.global.cluster.baseDomain }}/api/v1'
 
 global:
-  appname: example-app
-  frontend:
-    name: example-frontend
-    port: 8080
+  appname: demo-app
+
   backend:
-    name: example-backend
+    name: demo-backend
     port: 8080
+    imageRepo: quay.io/natelove/demo:latest
   labels:
     - key: helm.sh/chart
       value: '{{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}'

@@ -1,0 +1,15 @@
+---
+{{- with .Values.global.backend }}
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: {{ .name }}
+spec:
+  to:
+    kind: Service
+    name: {{ .name }}
+    weight: 100
+  port:
+    targetPort: {{ .port }}
+
+  {{- end -}}

@@ -13,4 +13,13 @@ metadata:
 spec:
   lookupPolicy:
     local: true
+  tags:
+    - name: latest
+      annotations: null
+      from:
+        kind: DockerImage
+        name: {{ .imageRepo}}
+      importPolicy: { }
+      referencePolicy:
+        type: Source
 {{- end -}}

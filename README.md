@@ -13,7 +13,7 @@ helm dependency update
 #### Install Helm Chart
 
 ```
-helm install postgres/postgres-chart --name-template <TEMPLATE_NAME>
+helm install . --name-template <TEMPLATE_NAME> --namespace <namespace> --create-namespace
 ```
 
 ### Update Helm Chart to newer version
@@ -24,6 +24,4 @@ Update `appVersion` in the `Chart.yaml` file
 helm upgrade <TEMPLATE_NAME> .
 ```
 
-### 
 
-Start Pipeline 
