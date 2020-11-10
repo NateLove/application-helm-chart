@@ -12,6 +12,7 @@ global:
     name: demo-backend
     port: 8080
     imageRepo: quay.io/natelove/demo:latest
+    replicas: 1
   labels:
     - key: helm.sh/chart
       value: '{{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}'
