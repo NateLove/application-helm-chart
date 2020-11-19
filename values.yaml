@@ -11,9 +11,11 @@ global:
   backend:
     name: demo-backend
     port: 8080
-    imageRepo: quay.io/natelove/demo:latest
+    image: quay.io/natelove/demo:latest
     replicas: 1
-    tag: latest
+    contextPath: /api/v1
+    liveProbe: /demo/Hello
+    readyProbe: /demo/Hello
   labels:
     - key: helm.sh/chart
       value: '{{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}'
