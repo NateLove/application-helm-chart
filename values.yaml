@@ -11,7 +11,7 @@ global:
   backend:
     name: demo-backend
     port: 8080
-    image: quay.io/natelove/demo:latest
+    image:  natemz/demo-java
     replicas: 1
     contextPath: /api/v1
     liveProbe: /demo/Hello
