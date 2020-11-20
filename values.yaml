@@ -11,11 +11,12 @@ global:
   backend:
     name: demo-backend
     port: 8080
-    image:  natemz/demo-java
+    image: quay.io/natelove/demo
     replicas: 1
     contextPath: /api/v1
     liveProbe: /demo/Hello
     readyProbe: /demo/Hello
+    env: dev
   labels:
     - key: helm.sh/chart
       value: '{{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}'

@@ -33,6 +33,8 @@ spec:
         env:
         - name: SERVER_SERVLET_CONTEXT_PATH
           value: {{ .contextPath }}
+        - name: JAVA_ARGS
+          value: --spring.profiles.active={{ .env }}
         image: {{ .image }}
         imagePullPolicy: Always
         livenessProbe:
