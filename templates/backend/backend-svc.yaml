@@ -17,7 +17,7 @@ spec:
     port: {{ .port }}
     targetPort: {{ .port }}
   selector:
-    deploymentConfig: {{ .name }}
+    app: {{ .name }}
   type: ClusterIP
   sessionAffinity: None
 {{- end -}}
